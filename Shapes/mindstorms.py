@@ -10,16 +10,19 @@ def draw_shapes():
     george.shape("turtle")
     george.color("yellow")
     george.speed(2)
+    draw_square(george)
 
-    for i in range(1:5):
-        george.forward(100)
-        george.right(90)
-
-    mary = turtle.Turtle()
-    mary.shape("arrow")
-    mary.color("blue")
-    mary.circle(100)
+    i = 1
+    while i<72:
+        george.right(5)
+        draw_square(george)
+        i+=1
 
     window.exitonclick()
+
+def draw_square(some_turtle):
+    for i in range(1,5):
+        some_turtle.forward(100)
+        some_turtle.right(90)
 
 draw_shapes()
