@@ -10,7 +10,12 @@ def read_text():
 def check_profanity(text_to_check):
     connection = urllib.urlopen("http://wdyl.com/profanity?q=" + text_to_check)
     output = connection.read()
-    print(output)
     connection.close()
+    if "true" in output:
+        print("There are profane words in this text file.")
+    if "false" in output:
+        print("There are not profane words in this text file.")
+    else:
+        print("Document not scanned properly.")
 
 read_text()
